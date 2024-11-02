@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
-import cowImage from "../assets/cow.png"
+import goatImage from "../assets/goat.webp"
 import dancingCat from "../assets/cat-dancing.gif"
 import drawingCat from "../assets/drawing.gif"
 
@@ -24,7 +24,7 @@ const Nvidia = () => {
         },
       ],
       cfg_scale: 5,
-      sampler: "K_EULER_ANCESTRAL",
+      sampler: "K_DPM_2_ANCESTRAL",
       seed: 0,
       steps: 25,
     }
@@ -59,7 +59,7 @@ const Nvidia = () => {
           <div id="input-field">
             <input
               onChange={handleInput}
-              placeholder="a cow wearing sunglasses"
+              placeholder="a happy goat with others in the background"
             />
 
             <button onClick={generateImage}>Generate</button>
@@ -68,7 +68,7 @@ const Nvidia = () => {
 
         <img
           className="generated-image"
-          src={generating ? drawingCat : image ? image : cowImage}
+          src={generating ? drawingCat : image ? image : goatImage}
           alt=""
         />
       </div>
